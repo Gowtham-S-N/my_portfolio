@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gowtham Sai Nelapati — Robotics Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Desamsetti Sivaji | Robotics Engineer Portfolio</title>
+
+<meta name="description" content="Robotics Engineer specializing in automation, ROS2, computer vision, and embedded systems. Projects include Go-Kart, Robotic Arm, and AI systems.">
+
+<meta name="keywords" content="Robotics Engineer, ROS2, Automation, Embedded Systems, Computer Vision, Portfolio, Sivaji">
+
+<meta name="author" content="Desamsetti Sivaji">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="robots" content="index, follow">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --navy: #0f2140;
+  --navy-mid: #1a3560;
+  --blue: #1e4db7;
+  --blue-light: #3a6fe8;
+  --accent: #e8a020;
+  --white: #ffffff;
+  --off-white: #f7f8fc;
+  --gray-100: #f0f2f8;
+  --gray-200: #dde2ef;
+  --gray-400: #8a93ad;
+  --gray-700: #2e3a55;
+  --text: #1a2540;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.7;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: transparent;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 60px; height: 64px;
+  transition: background 0.3s, border-color 0.3s;
+}
+nav.scrolled {
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-200);
+}
+nav.scrolled .nav-name { color: var(--navy); }
+nav.scrolled .nav-links a { color: var(--gray-400); }
+nav.scrolled .nav-links a:hover { color: var(--blue); }
+.nav-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px; color: #fff;
+  text-decoration: none; letter-spacing: 0.2px;
+  transition: color 0.3s;
+}
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a {
+  font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.8);
+  text-decoration: none; letter-spacing: 0.3px;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: #fff; }
+.nav-cta {
+  background: var(--accent); color: #fff;
+  font-size: 13px; font-weight: 500;
+  padding: 9px 22px; border-radius: 6px;
+  text-decoration: none; transition: background 0.2s;
+}
+.nav-cta:hover { background: #d4911a; }
+
+/* HERO */
+#hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 100px 60px 60px;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: url('assets/img/agri-robot.jpg') center/cover no-repeat;
+  z-index: 0;
+}
+.hero-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(105deg, rgba(8,18,38,0.92) 0%, rgba(8,18,38,0.80) 40%, rgba(8,18,38,0.35) 100%);
+}
+.hero-left { position: relative; z-index: 1; max-width: 580px; }
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(232,160,32,0.15);
+  border: 1px solid rgba(232,160,32,0.4);
+  color: var(--accent);
+  font-size: 12px; font-weight: 500;
+  padding: 6px 14px; border-radius: 100px;
+  letter-spacing: 0.5px; margin-bottom: 28px;
+}
+.hero-badge::before {
+  content: ''; width: 6px; height: 6px;
+  border-radius: 50%; background: var(--accent);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity:1; transform:scale(1); }
+  50% { opacity:0.5; transform:scale(1.4); }
+}
+
+h1.hero-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(42px, 6vw, 72px);
+  color: var(--white); line-height: 1.05;
+  margin-bottom: 16px;
+  opacity: 0; animation: fadeUp 0.7s 0.2s forwards;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+.hero-title-line {
+  font-size: 16px; font-weight: 400; color: #a8c8f0;
+  margin-bottom: 28px;
+  opacity: 0; animation: fadeUp 0.7s 0.4s forwards;
+}
+.hero-desc {
+  font-size: 15px; color: rgba(220,230,245,0.85); line-height: 1.85;
+  max-width: 480px; margin-bottom: 44px;
+  opacity: 0; animation: fadeUp 0.7s 0.6s forwards;
+}
+.hero-actions {
+  display: flex; gap: 14px; flex-wrap: wrap;
+  opacity: 0; animation: fadeUp 0.7s 0.8s forwards;
+}
+.btn-white {
+  background: #fff; color: var(--navy);
+  font-size: 14px; font-weight: 600;
+  padding: 13px 30px; border-radius: 6px;
+  text-decoration: none; transition: all 0.2s;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+.btn-white:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
+.btn-ghost {
+  background: transparent; color: rgba(255,255,255,0.85);
+  border: 1px solid rgba(255,255,255,0.35);
+  font-size: 14px; font-weight: 500;
+  padding: 13px 30px; border-radius: 6px;
+  text-decoration: none; transition: all 0.2s;
+}
+.btn-ghost:hover { border-color: #fff; color: #fff; background: rgba(255,255,255,0.08); }
+
+.hero-scroll {
+  position: absolute; bottom: 36px; left: 50%;
+  transform: translateX(-50%); z-index: 1;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  opacity: 0; animation: fadeUp 0.7s 1.2s forwards;
+}
+.hero-scroll span { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 2px; text-transform: uppercase; }
+.scroll-line {
+  width: 1px; height: 48px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+  animation: scrollDrop 1.5s infinite;
+}
+@keyframes scrollDrop {
+  0% { transform: scaleY(0); transform-origin: top; opacity: 1; }
+  100% { transform: scaleY(1); transform-origin: top; opacity: 0; }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* LAYOUT */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 60px; }
+.section { padding: 96px 0; }
+.section-alt { background: var(--off-white); }
+.section-header { margin-bottom: 56px; }
+.section-eyebrow {
+  font-size: 12px; font-weight: 500; color: var(--blue);
+  letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;
+}
+.section-heading {
+  font-family: 'DM Serif Display', serif;
+  font-size: 38px; color: var(--navy); line-height: 1.2;
+}
+
+/* ABOUT */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.about-text { font-size: 15px; color: #4a5a7a; line-height: 1.9; }
+.about-text p { margin-bottom: 16px; }
+.about-photo-wrap { position: relative; display: flex; justify-content: center; align-items: center; }
+.about-photo-img {
+  width: 100%; max-width: 420px; aspect-ratio: 4/5;
+  object-fit: cover; object-position: top;
+  border-radius: 16px; display: block;
+  box-shadow: 0 20px 60px rgba(15,33,64,0.15);
+  border: 1px solid var(--gray-200);
+}
+.about-photo-placeholder {
+  width: 100%; max-width: 420px; aspect-ratio: 4/5;
+  background: var(--gray-100); border: 2px dashed var(--gray-200);
+  border-radius: 16px; display: none;
+  flex-direction: column; align-items: center; justify-content: center;
+  gap: 12px; color: var(--gray-400); font-size: 14px;
+}
+.about-photo-placeholder span:first-child { font-size: 48px; }
+
+/* SKILLS — LOGO CARD GRID */
+.skills-section-header { margin-bottom: 48px; }
+
+.skills-category { margin-bottom: 52px; }
+.skills-category-title {
+  font-size: 11px; font-weight: 600; color: var(--gray-400);
+  letter-spacing: 2.5px; text-transform: uppercase;
+  margin-bottom: 24px;
+  display: flex; align-items: center; gap: 12px;
+}
+.skills-category-title::after {
+  content: ''; flex: 1; height: 1px; background: var(--gray-200);
+}
+
+.skills-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 16px;
+}
+
+.skill-logo-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 14px;
+  padding: 24px 16px;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 12px;
+  transition: all 0.25s;
+  cursor: default;
+}
+.skill-logo-card:hover {
+  border-color: var(--blue-light);
+  box-shadow: 0 8px 28px rgba(30,77,183,0.1);
+  transform: translateY(-4px);
+}
+.skill-logo-card img {
+  width: 48px; height: 48px;
+  object-fit: contain;
+  filter: none;
+  transition: transform 0.25s;
+}
+.skill-logo-card:hover img { transform: scale(1.08); }
+.skill-logo-name {
+  font-size: 12px; font-weight: 500; color: var(--navy);
+  text-align: center; line-height: 1.3;
+}
+
+.soft-skills-wrap { margin-top: 8px; }
+.soft-skills { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+.soft-pill {
+  background: var(--white);
+  color: var(--navy);
+  border: 1px solid var(--gray-200);
+  font-size: 13px; font-weight: 500;
+  padding: 8px 20px; border-radius: 100px;
+  transition: all 0.2s;
+}
+.soft-pill:hover { border-color: var(--blue); color: var(--blue); background: var(--gray-100); }
+
+/* PROJECTS */
+.projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.project-card {
+  background: var(--white); border: 1px solid var(--gray-200);
+  border-radius: 12px; padding: 28px;
+  transition: all 0.25s; display: flex; flex-direction: column;
+}
+.project-card:hover { box-shadow: 0 8px 32px rgba(15,33,64,0.1); transform: translateY(-4px); border-color: var(--blue-light); }
+.project-num { font-size: 11px; font-weight: 500; color: var(--accent); letter-spacing: 1px; margin-bottom: 16px; }
+.project-title { font-family: 'DM Serif Display', serif; font-size: 17px; color: var(--navy); margin-bottom: 10px; line-height: 1.3; }
+.project-desc { font-size: 13px; color: #6a7a9a; line-height: 1.7; flex: 1; margin-bottom: 20px; }
+.project-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.p-tag { font-size: 11px; font-weight: 500; background: var(--gray-100); color: var(--blue); padding: 4px 10px; border-radius: 4px; }
+
+/* EXPERIENCE */
+.exp-layout { display: grid; grid-template-columns: 220px 1fr; gap: 60px; }
+.exp-tabs { display: flex; flex-direction: column; gap: 4px; }
+.exp-tab {
+  padding: 14px 20px; border-radius: 8px; cursor: pointer;
+  font-size: 13px; font-weight: 500; color: var(--gray-400);
+  border-left: 3px solid transparent; transition: all 0.2s;
+}
+.exp-tab.active { background: var(--gray-100); color: var(--navy); border-left-color: var(--blue); }
+.exp-tab:hover:not(.active) { background: var(--gray-100); color: var(--navy); }
+.exp-pane { display: none; }
+.exp-pane.active { display: block; }
+.exp-period { font-size: 12px; color: var(--blue); font-weight: 500; letter-spacing: 0.5px; margin-bottom: 8px; }
+.exp-role { font-family: 'DM Serif Display', serif; font-size: 24px; color: var(--navy); margin-bottom: 4px; }
+.exp-org { font-size: 14px; color: var(--gray-400); margin-bottom: 24px; }
+.exp-points { list-style: none; }
+.exp-points li { font-size: 14px; color: #4a5a7a; padding: 8px 0; border-bottom: 1px solid var(--gray-100); display: flex; gap: 12px; }
+.exp-points li::before { content: '→'; color: var(--blue); flex-shrink: 0; }
+
+/* RESEARCH */
+.research-card {
+  background: var(--navy); border-radius: 16px; padding: 56px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+}
+.rc-label { font-size: 11px; font-weight: 500; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+.rc-title { font-family: 'DM Serif Display', serif; font-size: 26px; color: #fff; margin-bottom: 20px; line-height: 1.3; }
+.rc-period { font-size: 13px; color: #7a9fd4; }
+.rc-abstract { font-size: 14px; color: #a0b4cc; line-height: 1.9; }
+
+/* CERTIFICATIONS */
+.certs-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.cert-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 28px 24px; transition: all 0.2s; }
+.cert-card:hover { box-shadow: 0 4px 20px rgba(15,33,64,0.08); border-color: var(--blue-light); }
+.cert-icon-wrap { width: 44px; height: 44px; border-radius: 10px; background: var(--gray-100); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 20px; }
+.cert-name { font-size: 13px; font-weight: 500; color: var(--navy); line-height: 1.4; }
+.cert-issuer { font-size: 12px; color: var(--gray-400); margin-top: 6px; }
+
+/* CONTACT */
+.contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.contact-intro { font-size: 15px; color: #4a5a7a; line-height: 1.9; margin-bottom: 36px; }
+.contact-list { display: flex; flex-direction: column; gap: 16px; }
+.contact-item {
+  display: flex; align-items: center; gap: 16px;
+  text-decoration: none; color: inherit;
+  padding: 16px 20px; background: var(--gray-100);
+  border-radius: 10px; border: 1px solid var(--gray-200); transition: all 0.2s;
+}
+.contact-item:hover { background: var(--white); border-color: var(--blue-light); box-shadow: 0 4px 16px rgba(15,33,64,0.07); }
+.ci-icon { width: 40px; height: 40px; border-radius: 8px; background: var(--navy); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+.ci-label { font-size: 11px; color: var(--gray-400); font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+.ci-value { font-size: 14px; font-weight: 500; color: var(--navy); margin-top: 2px; }
+.contact-map-card {
+  background: var(--navy); border-radius: 16px; padding: 40px;
+  height: 100%; min-height: 300px;
+  display: flex; flex-direction: column; justify-content: flex-end;
+}
+.map-label { font-size: 11px; color: #7a9fd4; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
+.map-city { font-family: 'DM Serif Display', serif; font-size: 32px; color: #fff; }
+.map-sub { font-size: 13px; color: #7a9fd4; margin-top: 4px; }
+
+.contact-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+}
+
+.ci-value {
+  white-space: nowrap;
+}
+
+/* FOOTER */
+footer {
+  background: var(--navy); color: #7a9fd4;
+  text-align: center; padding: 36px 60px;
+  font-size: 13px; display: flex; justify-content: space-between; align-items: center;
+}
+.footer-name { font-family: 'DM Serif Display', serif; color: #fff; font-size: 16px; }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s, transform 0.7s; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  #hero { padding: 100px 24px 60px; }
+  .container { padding: 0 24px; }
+  .about-grid, .contact-layout, .exp-layout { grid-template-columns: 1fr; gap: 40px; }
+  .projects-grid, .certs-grid { grid-template-columns: 1fr 1fr; }
+  .research-card { grid-template-columns: 1fr; padding: 36px; }
+  footer { flex-direction: column; gap: 12px; }
+  .skills-logo-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+}
+@media (max-width: 600px) {
+  .projects-grid, .certs-grid { grid-template-columns: 1fr; }
+  .skills-logo-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+
+  .container {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .modal-videos,
+  .modal-images {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-name">Gowtham Sai Nelapati</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:gsai2909@gmail.com" class="nav-cta">Get in Touch</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-left">
+    <div class="hero-badge" style="opacity:0;animation:fadeUp 0.6s 0.1s forwards">
+      Robotics and Automation Engineer
+    </div>
+    <h1 class="hero-name">Gowtham<br>Sai Nelapati</h1>
+    <p class="hero-title-line">M.Tech Robotics and Automation · Amrita School of Engineering</p>
+    <p class="hero-desc">Designing and building robotic systems that bridge mechanical precision with intelligent automation. From 5-DOF arms to autonomous drones — I engineer machines that move.</p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn-white">View Projects</a>
+      <a href="#contact" class="btn-ghost">Contact Me</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="reveal about-grid">
+      <div>
+        <div class="section-header">
+          <div class="section-eyebrow">About</div>
+          <h2 class="section-heading">Passionate about building the future of robotics</h2>
+        </div>
+        <div class="about-text">
+          <p>I am an M.Tech student specializing in Robotics and Automation at Amrita School of Engineering, with prior industry experience as a Design Engineer at LTTS working on Honda automobile projects.</p>
+          <p>My work spans robotic mechanism design, autonomous systems, path planning algorithms, and CAD-based product development. I thrive at the intersection of mechanical design and intelligent control.</p>
+          <p>I am actively seeking opportunities to contribute to advanced robotics projects in industry or research settings.</p>
+        </div>
+      </div>
+      <div class="about-photo-wrap">
+        <img
+          src="assets/img/profile.jpg"
+          alt="Gowtham Sai Nelapati"
+          class="about-photo-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        />
+        <div class="about-photo-placeholder">
+          <span>👤</span>
+          <span>Add Photo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section section-alt">
+  <div class="container">
+    <div class="reveal section-header">
+      <div class="section-eyebrow">Expertise</div>
+      <h2 class="section-heading">Skills &amp; Capabilities</h2>
+    </div>
+ 
+    <!-- Technical Tools -->
+    <div class="reveal skills-category">
+      <div class="skills-category-title">Technical Tools</div>
+      <div class="skills-logo-grid">
+ 
+        <!-- SolidWorks -->
+        <div class="skill-logo-card">
+          <div class="skill-icon-svg">
+            <svg viewBox="0 0 48 48" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="48" height="48" rx="10" fill="#FF0000"/>
+              <text x="24" y="30" font-size="13" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial">SW</text>
+            </svg>
+          </div>
+          <span class="skill-logo-name">SolidWorks</span>
+        </div>
+ 
+        <!-- CATIA -->
+        <div class="skill-logo-card">
+          <div class="skill-icon-svg">
+            <svg viewBox="0 0 48 48" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="48" height="48" rx="10" fill="#005386"/>
+              <text x="24" y="30" font-size="11" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial">CATIA</text>
+            </svg>
+          </div>
+          <span class="skill-logo-name">CATIA</span>
+        </div>
+ 
+        <!-- AutoCAD -->
+        <div class="skill-logo-card">
+          <div class="skill-icon-svg">
+            <svg viewBox="0 0 48 48" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="48" height="48" rx="10" fill="#E51937"/>
+              <text x="24" y="22" font-size="9" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial">AUTO</text>
+              <text x="24" y="34" font-size="9" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial">CAD</text>
+            </svg>
+          </div>
+          <span class="skill-logo-name">AutoCAD</span>
+        </div>
+ 
+        <!-- ANSYS -->
+        <div class="skill-logo-card">
+          <div class="skill-icon-svg">
+            <svg viewBox="0 0 48 48" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="48" height="48" rx="10" fill="#FFB71B"/>
+              <text x="24" y="30" font-size="10" font-weight="bold" fill="#1a1a1a" text-anchor="middle" font-family="Arial">ANSYS</text>
+            </svg>
+          </div>
+          <span class="skill-logo-name">ANSYS</span>
+        </div>
+ 
+        <!-- Fusion 360 -->
+        <div class="skill-logo-card">
+          <div class="skill-icon-svg">
+            <svg viewBox="0 0 48 48" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="48" height="48" rx="10" fill="#F05A28"/>
+              <text x="24" y="22" font-size="7.5" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial">FUSION</text>
+              <text x="24" y="33" font-size="7.5" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial">360</text>
+            </svg>
+          </div>
+          <span class="skill-logo-name">Fusion 360</span>
+        </div>
+ 
+      </div>
+    </div>
+ 
+    <!-- Programming & Simulation -->
+    <div class="reveal skills-category">
+      <div class="skills-category-title">Programming &amp; Simulation</div>
+      <div class="skills-logo-grid">
+ 
+        <!-- Python — devicons CDN (reliable) -->
+        <div class="skill-logo-card">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+            alt="Python"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+          />
+          <div class="skill-icon-svg" style="display:none">
+            <svg viewBox="0 0 48 48" width="48" height="48" fill="none"><rect width="48" height="48" rx="10" fill="#3776AB"/><text x="24" y="30" font-size="11" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial">PY</text></svg>
+          </div>
+          <span class="skill-logo-name">Python</span>
+        </div>
+ 
+        <!-- ROS -->
+        <div class="skill-logo-card">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ros/ros-original.svg"
+            alt="ROS"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+          />
+          <div class="skill-icon-svg" style="display:none">
+            <svg viewBox="0 0 48 48" width="48" height="48" fill="none"><rect width="48" height="48" rx="10" fill="#22314E"/><text x="24" y="30" font-size="12" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial">ROS</text></svg>
+          </div>
+          <span class="skill-logo-name">ROS / ROS2</span>
+        </div>
+ 
+        <!-- MATLAB -->
+        <div class="skill-logo-card">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matlab/matlab-original.svg"
+            alt="MATLAB"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+          />
+          <div class="skill-icon-svg" style="display:none">
+            <svg viewBox="0 0 48 48" width="48" height="48" fill="none"><rect width="48" height="48" rx="10" fill="#E16737"/><text x="24" y="30" font-size="8" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial">MATLAB</text></svg>
+          </div>
+          <span class="skill-logo-name">MATLAB</span>
+        </div>
+ 
+        <!-- C Programming -->
+        <div class="skill-logo-card">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"
+            alt="C"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+          />
+          <div class="skill-icon-svg" style="display:none">
+            <svg viewBox="0 0 48 48" width="48" height="48" fill="none"><rect width="48" height="48" rx="10" fill="#283593"/><text x="24" y="32" font-size="22" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial">C</text></svg>
+          </div>
+          <span class="skill-logo-name">C Programming</span>
+        </div>
+ 
+        <!-- Simulink -->
+        <div class="skill-logo-card">
+          <div class="skill-icon-svg">
+            <svg viewBox="0 0 48 48" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="48" height="48" rx="10" fill="#E16737"/>
+              <!-- Simulink block diagram icon -->
+              <rect x="8" y="18" width="10" height="12" rx="2" fill="white" opacity="0.9"/>
+              <rect x="30" y="18" width="10" height="12" rx="2" fill="white" opacity="0.9"/>
+              <line x1="18" y1="24" x2="30" y2="24" stroke="white" stroke-width="2.5"/>
+              <polygon points="27,21 30,24 27,27" fill="white"/>
+            </svg>
+          </div>
+          <span class="skill-logo-name">Simulink</span>
+        </div>
+ 
+      </div>
+    </div>
+ 
+    <!-- Soft Skills -->
+    <div class="reveal soft-skills-wrap">
+      <div class="skills-category-title">Soft Skills</div>
+      <div class="soft-skills">
+        <span class="soft-pill">Team Leadership</span>
+        <span class="soft-pill">Critical Thinking</span>
+        <span class="soft-pill">Communication</span>
+        <span class="soft-pill">Time Management</span>
+        <span class="soft-pill">Work Ethic</span>
+      </div>
+    </div>
+ 
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <div class="container">
+    <div class="reveal section-header">
+      <div class="section-eyebrow">Portfolio</div>
+      <h2 class="section-heading">Featured Projects</h2>
+    </div>
+    <div class="reveal projects-grid" id="projects-grid"></div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section section-alt">
+  <div class="container">
+    <div class="reveal section-header">
+      <div class="section-eyebrow">Background</div>
+      <h2 class="section-heading">Experience &amp; Education</h2>
+    </div>
+    <div class="reveal exp-layout">
+      <div class="exp-tabs">
+        <div class="exp-tab active" onclick="showTab('ltts')">Design Engineer</div>
+        <div class="exp-tab" onclick="showTab('mtech')">M.Tech Robotics</div>
+        <div class="exp-tab" onclick="showTab('btech')">B.Tech Mechanical</div>
+      </div>
+      <div>
+        <div class="exp-pane active" id="tab-ltts">
+          <div class="exp-period">2022 — 2025</div>
+          <div class="exp-role">Design Engineer</div>
+          <div class="exp-org">LTTS · Customer: Honda Motor Co.</div>
+          <ul class="exp-points">
+            <li>Design and development of automobile dashboard and bumper systems to Honda specifications</li>
+            <li>Created detailed 2D and 3D CAD models based on customer requirements and feasibility analysis</li>
+            <li>Worked on plastic and interior trim components for production vehicles</li>
+            <li>Collaborated cross-functionally with Japanese engineering teams on design reviews</li>
+          </ul>
+        </div>
+        <div class="exp-pane" id="tab-mtech">
+          <div class="exp-period">2025 — Present</div>
+          <div class="exp-role">M.Tech — Robotics &amp; Automation</div>
+          <div class="exp-org">Amrita School of Engineering, Bangalore · GPA: 8.37</div>
+          <ul class="exp-points">
+            <li>Specializing in robotic mechanisms, autonomous navigation, and embedded control systems</li>
+            <li>Working on 5-DOF robot arm design and autonomous drone delivery projects</li>
+            <li>Studying path planning algorithms including PSO for unknown environments</li>
+          </ul>
+        </div>
+        <div class="exp-pane" id="tab-btech">
+          <div class="exp-period">2018 — 2022</div>
+          <div class="exp-role">B.Tech — Mechanical Engineering</div>
+          <div class="exp-org">Amrita School of Engineering · GPA: 7.64</div>
+          <ul class="exp-points">
+            <li>Core coursework in machine design, thermodynamics, manufacturing, and materials science</li>
+            <li>Final year research on knee implant biomechanical analysis using HDPE and MWCNT composites</li>
+            <li>Designed agricultural tiller and Martian rover traction system as major projects</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research" class="section">
+  <div class="container">
+    <div class="reveal section-header">
+      <div class="section-eyebrow">Research</div>
+      <h2 class="section-heading">Published Work</h2>
+    </div>
+    <div class="reveal research-card">
+      <div>
+        <div class="rc-label">Research · Jan – Mar 2021</div>
+        <div class="rc-title">Design and Analysis of a Knee Implant for Total Knee Arthroplasty</div>
+        <div class="rc-period">Amrita School of Engineering</div>
+      </div>
+      <div class="rc-abstract">
+        Investigated the biomechanical characteristics of three baseplate rotational arrangement techniques in Total Knee Arthroplasty using high-density polyethylene (HDPE) and multi-walled carbon nanotube (MWCNT) polymer composites. Identified the optimal rotational arrangement technique to reduce the incidence of TKA mechanical failure and improve implant longevity.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="section section-alt">
+  <div class="container">
+    <div class="reveal section-header">
+      <div class="section-eyebrow">Credentials</div>
+      <h2 class="section-heading">Certifications</h2>
+    </div>
+    <div class="reveal certs-grid">
+      <div class="cert-card">
+        <div class="cert-icon-wrap">🏅</div>
+        <div class="cert-name">CSWPA — Surfacing</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon-wrap">🏅</div>
+        <div class="cert-name">CSWPA — Weldments</div>
+
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon-wrap">🏅</div>
+        <div class="cert-name">CSWPA — Sheet Metal</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon-wrap">🎓</div>
+        <div class="cert-name">Digital Manufacturing using Fusion 360</div>
+        <div class="cert-issuer">Autodesk</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="reveal contact-layout">
+      <div>
+        <div class="section-header">
+          <div class="section-eyebrow">Contact</div>
+          <h2 class="section-heading">Let's work together</h2>
+        </div>
+        <p class="contact-intro">Open to internship opportunities, research collaborations, and full-time roles in robotics, automation, and mechanical design. Feel free to reach out.</p>
+        <div class="contact-list">
+          <a href="mailto:gsai2909@gmail.com" class="contact-item">
+            <div class="ci-icon">✉</div>
+            <div><div class="ci-label">Email</div><div class="ci-value">gsai2909@gmail.com</div></div>
+          </a>
+          <a href="tel:+919121722437" class="contact-item">
+            <div class="ci-icon">📞</div>
+            <div><div class="ci-label">Phone</div><div class="ci-value">+91 91217 22437</div></div>
+          </a>
+          <div class="contact-item">
+            <div class="ci-icon">📍</div>
+            <div><div class="ci-label">Location</div><div class="ci-value">HSR Layout, Bangalore, Karnataka</div></div>
+          </div>
+          <a href="https://github.com/Gowtham-S-N" target="_blank" rel="noopener noreferrer" class="contact-item">
+            <div class="ci-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </div>
+            <div><div class="ci-label">GitHub</div><div class="ci-value">Gowtham-S-N</div></div>
+          </a>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-name">Gowtham Sai Nelapati</span>
+  <span>© 2025 · All rights reserved</span>
+  <span>Robotics &amp; Automation Engineer</span>
+</footer>
+
+<script>
+// NAV SCROLL EFFECT
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// TAB SWITCHER
+function showTab(id) {
+  document.querySelectorAll('.exp-tab').forEach((t, i) => {
+    t.classList.toggle('active', ['ltts', 'mtech', 'btech'][i] === id);
+  });
+  document.querySelectorAll('.exp-pane').forEach(p => p.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+}
+
+// PROJECTS
+const projects = [
+  { num: '01', title: '5-DOF Pick-and-Place Robot', desc: 'Design, modeling, and full automation of a 5-DOF robotic arm for industrial pick-and-place operations.', tags: ['SolidWorks', 'Automation', 'Mechanism Design'] },
+  { num: '02', title: '2D Indoor Mapping with LiDAR', desc: 'Built a 2D environment mapping system using LiDAR and ROS2 for indoor autonomous navigation.', tags: ['ROS2', 'LiDAR', 'SLAM'] },
+  { num: '03', title: 'Autonomous Drone Delivery', desc: 'Developed an autonomous aerial drone capable of navigating and completing delivery missions end-to-end.', tags: ['UAV', 'Path Planning', 'Autonomy'] },
+  { num: '04', title: 'PSO Path Planning', desc: 'Shortest path planning in unknown environments using Particle Swarm Optimization algorithm implemented in Python.', tags: ['PSO', 'Python', 'Navigation'] },
+  { num: '05', title: '5-DOF Arm with Linear Actuators', desc: 'Fabricated a physical 5-DOF robotic arm using linear actuators, designed for precise and repeatable motion.', tags: ['Fabrication', 'Actuators', 'Control'] },
+  { num: '06', title: 'Mini Electric Power Tiller', desc: 'Designed and developed a compact electric power tiller for agricultural automation, reducing manual effort.', tags: ['Agricultural', 'Electric Drive', 'Design'] },
+  { num: '07', title: 'Martian Rover Traction System', desc: 'An ingenious protruding and retractable spokes system engineered for improved vehicle traction on rough Martian terrain.', tags: ['Rover', 'Space Tech', 'Innovation'] },
+];
+
+const grid = document.getElementById('projects-grid');
+projects.forEach(p => {
+  grid.innerHTML += `
+    <div class="project-card">
+      <div class="project-num">PROJECT ${p.num}</div>
+      <div class="project-title">${p.title}</div>
+      <div class="project-desc">${p.desc}</div>
+      <div class="project-tags">${p.tags.map(t => `<span class="p-tag">${t}</span>`).join('')}</div>
+    </div>`;
+});
+
+// SCROLL REVEAL
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
